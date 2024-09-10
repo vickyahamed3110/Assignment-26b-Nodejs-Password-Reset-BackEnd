@@ -6,7 +6,7 @@ const resetPasswordRouter = express.Router()
 resetPasswordRouter.post('/', async(req, res) => {
     const userData = req.body
     const password = userData.password
-    const collection = db.collection('gmail_user')
+    const collection = db.collection('users')
     try {
         bcrypt.hash(password, 10, async function(err, hash){
             if(err){
